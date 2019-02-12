@@ -1,0 +1,8 @@
+.supervisor {
+    border:1px solid black;
+}
+
+.supervisor > span {
+    font-weight: bold;
+
+}

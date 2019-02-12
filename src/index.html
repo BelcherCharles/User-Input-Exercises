@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport content=width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<fieldset>
+  <legend>Add A New Employee</legend>
+  <label for=firstName>First Name</label>
+  <input id="empFirstName" name="employee_creator" type="text" autofocus />
+  <br>
+  <label for="lastName">Last Name</label>
+  <input id="empLastName" name="employee_creator" type="text" autofocus />
+  <br>
+  <input type="radio" id="isMale" name="Gender" value="Male" checked>
+  <label for="Male">Male</label>
+  <br>
+  <input type="radio" id="isFemale" name="Gender" value="Female">
+  <label for="Female">Female</label>
+  <br>
+  <label for="emailAddress">Email Address</label>
+  <input id="empEmail" name="employee_creator" type="text" autofocus />
+  <br>
+  <label for="phoneNumber">Phone Number</label>
+  <input id="empPhone" name="employee_creator" type="text" autofocus />
+  <br>
+  <label for="birthday">Birthdate</label>
+  <input id="empBirthdate" name="employee_creator" type="date" autofocus />
+  <br>
+  <label for="department">Department</label>
+  <select id="empDepartment">
+    <option value="Executive">Executive</option>
+    <option value="Administrative">Administrative</option>
+    <option value="Production">Production</option>
+    <option value="Customer Service">Customer Service</option>
+    <option value="Maintenance">Maintenance</option>
+  </select>
+  <br>
+  <label for="supervisor">Supervisor?</label>
+  <input id="empSupervisor" name="employee_creator" type="checkbox" autofocus />
+  <br>
+  <button id="createNewEmployee">Create New Employee</button>
+</fieldset>
+<br>
+
+
+<h3>Employee Search Functions</h3>
+<label>Search For Employees By Department:</label>
+  <select id="departmentSearch" name="empDeptSearch">
+    <option value="All">All Depts.</option>
+    <option value="Executive">Executive</option>
+    <option value="Administrative">Administrative</option>
+    <option value="Production">Production</option>
+    <option value="Customer Service">Customer Service</option>
+    <option value="Maintenance">Maintenance</option>
+  </select>
+<br>
+<label>Search For Department Supervisors?</label><input id="isSuper" name="super_Search" type="checkbox" autofocus />
+<br>
+<label for="firstNameSearch">Search Employees By First Name:</label>
+<input id="firstNameSearch" name="firstNameSearch" type="text" autofocus />
+<br>
+<label for="lastNameSearch">Search Employees By Last Name:</label>
+<input id="lastNameSearch" name="lastNameSearch" type="text" autofocus />
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Employee Listing</h3>
+<div id="employee-Container">
+
+</div>
+
+
+<body>
+  <script src="scripts/singleEmployee.js"></script>
+  <script src="scripts/apiManager.js"></script>
+  <script src="scripts/getAllEmployees.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
