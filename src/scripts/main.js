@@ -3,6 +3,7 @@ printAllEmployees();
 document.querySelector("#createNewEmployee").addEventListener("click", () => {
     const empFirstName = document.querySelector("#empFirstName").value
     const empLastName = document.querySelector("#empLastName").value
+    const empGender = document.querySelector("#empGender").value
     const empEmail = document.querySelector("#empEmail").value
     const empPhone = document.querySelector("#empPhone").value
     const empBirthdate = document.querySelector("#empBirthdate").value
@@ -12,6 +13,7 @@ document.querySelector("#createNewEmployee").addEventListener("click", () => {
     const employeeToAdd = {
         FirstName: empFirstName,
         LastName: empLastName,
+        Gender: empGender,
         Email: empEmail,
         Phone: empPhone,
         Birthdate: empBirthdate,
@@ -94,9 +96,38 @@ document.querySelector("#lastNameSearch").addEventListener("keyup", () => {
 })
 
 document.querySelector("#employee-Container").addEventListener("click", () => {
-    let i = event.target.id.split("-")[1]
-    return fetch(`http://localhost:8088/employees/${i}`, {
-        method: "DELETE"
-    })
-    .then(printAllEmployees)
+    if (event.target.classList.contains("removeBtn")) {
+        let empId = event.target.id.split("-")[1];
+        // console.log(`you clicked the remove button ${empId}`)
+        return fetch(`http://localhost:8088/employees/${empId}`, {
+            method: "DELETE"
+    })  .then(printAllEmployees)
+}
+        else if (event.target.classList.contains("editBtn")) {
+        let empId = event.target.id.split("-")[1];
+        // console.log(`you clicked the edit button ${empId}`);
+        getOneEmployee(empId)
+            .then((employeeInfo) => {
+                // console.log(employeeInfo);
+                document.querySelector(`#emp-${empId}`).innerHTML = buildEditForm(employeeInfo);
+            }
+        )}
+        else if (event.target.classList.contains("saveBtn")) {
+        let empId = event.target.id.split("-")[1];
+            const editedFirstName = document.querySelector("#editedFirstName").value;
+            const editedLastName = document.querySelector("#editedLastName").value;
+            const editedGender = document.querySelector("#editedGender").value
+            const editedEmail = document.querySelector("#editedEmail").value
+            const editedPhone = document.querySelector("#editedPhone").value;
+            const editedBirthdate = document.querySelector("#editedBirthdate").value;
+            const editedDepartment = document.querySelector("#editedDepartment").value;
+            const editedSupervisor = document.querySelector("#editedSupervisor").checked;
+
+            const editedEmployeeObject = buildEditedEmployee(editedFirstName, editedLastName, editedGender, editedEmail, editedPhone, editedBirthdate, editedDepartment, editedSupervisor)
+
+            console.log(editedEmployeeObject);
+
+            editEmployee(empId,editedEmployeeObject)
+            .then(printAllEmployees)
+        }
 })

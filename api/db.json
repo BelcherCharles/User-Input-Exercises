@@ -1,3 +1,59 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "FirstName": "Charles",
+      "LastName": "Belcher",
+      "Gender": "Male",
+      "Email": "BelcherCharles@yahoo.com",
+      "Phone": "(304) 932-2120",
+      "Birthdate": "1980-07-19",
+      "Department": "Executive",
+      "Supervisor": true,
+      "id": 1
+    },
+    {
+      "FirstName": "Tracy",
+      "LastName": "Belcher",
+      "Gender": "Female",
+      "Email": "TBritt29@gmail.com",
+      "Phone": "(304) 389-2536",
+      "Birthdate": "1987-05-29",
+      "Department": "Executive",
+      "Supervisor": false,
+      "id": 2
+    },
+    {
+      "FirstName": "Kennedy",
+      "LastName": "Belcher",
+      "Gender": "Female",
+      "Email": "PrincessK@aol.com",
+      "Phone": "(304) 121-3434",
+      "Birthdate": "2014-02-10",
+      "Department": "Customer Service",
+      "Supervisor": false,
+      "id": 3
+    },
+    {
+      "FirstName": "Lincoln",
+      "LastName": "Belcher",
+      "Gender": "Male",
+      "Email": "LilRoo@prodigy.com",
+      "Phone": "(304) 676-8989",
+      "Birthdate": "2016-12-09",
+      "Department": "Production",
+      "Supervisor": true,
+      "id": 4
+    },
+    {
+      "FirstName": "Rudy",
+      "LastName": "Belcher",
+      "Gender": "Male",
+      "Email": "ShitMaker@meows.com",
+      "Phone": "(000) 000-0000",
+      "Birthdate": "2014-07-01",
+      "Department": "Maintenance",
+      "Supervisor": true,
+      "id": 5
+    }
+  ]
 }

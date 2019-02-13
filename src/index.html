@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport content=width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-  <link rel="stylesheet" href="/styles/style.css">
+  <title>HR API</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <fieldset>
@@ -17,12 +17,12 @@
   <label for="lastName">Last Name</label>
   <input id="empLastName" name="employee_creator" type="text" autofocus />
   <br>
-  <input type="radio" id="isMale" name="Gender" value="Male" checked>
-  <label for="Male">Male</label>
-  <br>
-  <input type="radio" id="isFemale" name="Gender" value="Female">
-  <label for="Female">Female</label>
-  <br>
+  <label for="Gender">Gender</label><br>
+    <select id="empGender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select><br>
   <label for="emailAddress">Email Address</label>
   <input id="empEmail" name="employee_creator" type="text" autofocus />
   <br>
@@ -79,6 +79,7 @@
 
 
 <body>
+  <script src="scripts/editForm.js"></script>
   <script src="scripts/singleEmployee.js"></script>
   <script src="scripts/apiManager.js"></script>
   <script src="scripts/getAllEmployees.js"></script>
