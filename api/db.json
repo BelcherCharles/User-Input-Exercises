@@ -29,7 +29,7 @@
       "Email": "PrincessK@aol.com",
       "Phone": "(304) 121-3434",
       "Birthdate": "2014-02-10",
-      "Department": "Customer Service",
+      "Department": "Executive",
       "Supervisor": false,
       "id": 3
     },
@@ -45,15 +45,15 @@
       "id": 4
     },
     {
-      "FirstName": "Rudy",
+      "FirstName": "Carol",
       "LastName": "Belcher",
-      "Gender": "Male",
-      "Email": "ShitMaker@meows.com",
-      "Phone": "(000) 000-0000",
-      "Birthdate": "2014-07-01",
-      "Department": "Maintenance",
+      "Gender": "Female",
+      "Email": "OnTheFloat@aol.com",
+      "Phone": "(304) 546-2633",
+      "Birthdate": "1949-07-16",
+      "Department": "Administrative",
       "Supervisor": true,
-      "id": 5
+      "id": 6
     }
   ]
 }

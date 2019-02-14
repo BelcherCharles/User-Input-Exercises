@@ -23,6 +23,14 @@ document.querySelector("#createNewEmployee").addEventListener("click", () => {
 
     createEmployee(employeeToAdd).then(() => {
         printAllEmployees();
+        document.querySelector("#empFirstName").value = ""
+        document.querySelector("#empLastName").value = ""
+        document.querySelector("#empGender").value = ""
+        document.querySelector("#empEmail").value = ""
+        document.querySelector("#empPhone").value = ""
+        document.querySelector("#empBirthdate").value = ""
+        document.querySelector("#empDepartment").value = ""
+        document.querySelector("#empSupervisor").checked = ""
     })
 })
 
@@ -101,9 +109,9 @@ document.querySelector("#employee-Container").addEventListener("click", () => {
         // console.log(`you clicked the remove button ${empId}`)
         return fetch(`http://localhost:8088/employees/${empId}`, {
             method: "DELETE"
-    })  .then(printAllEmployees)
-}
-        else if (event.target.classList.contains("editBtn")) {
+        }).then(printAllEmployees)
+    }
+    else if (event.target.classList.contains("editBtn")) {
         let empId = event.target.id.split("-")[1];
         // console.log(`you clicked the edit button ${empId}`);
         getOneEmployee(empId)
@@ -111,23 +119,24 @@ document.querySelector("#employee-Container").addEventListener("click", () => {
                 // console.log(employeeInfo);
                 document.querySelector(`#emp-${empId}`).innerHTML = buildEditForm(employeeInfo);
             }
-        )}
-        else if (event.target.classList.contains("saveBtn")) {
+            )
+    }
+    else if (event.target.classList.contains("saveBtn")) {
         let empId = event.target.id.split("-")[1];
-            const editedFirstName = document.querySelector("#editedFirstName").value;
-            const editedLastName = document.querySelector("#editedLastName").value;
-            const editedGender = document.querySelector("#editedGender").value
-            const editedEmail = document.querySelector("#editedEmail").value
-            const editedPhone = document.querySelector("#editedPhone").value;
-            const editedBirthdate = document.querySelector("#editedBirthdate").value;
-            const editedDepartment = document.querySelector("#editedDepartment").value;
-            const editedSupervisor = document.querySelector("#editedSupervisor").checked;
+        const editedFirstName = document.querySelector("#editedFirstName").value;
+        const editedLastName = document.querySelector("#editedLastName").value;
+        const editedGender = document.querySelector("#editedGender").value
+        const editedEmail = document.querySelector("#editedEmail").value
+        const editedPhone = document.querySelector("#editedPhone").value;
+        const editedBirthdate = document.querySelector("#editedBirthdate").value;
+        const editedDepartment = document.querySelector("#editedDepartment").value;
+        const editedSupervisor = document.querySelector("#editedSupervisor").checked;
 
-            const editedEmployeeObject = buildEditedEmployee(editedFirstName, editedLastName, editedGender, editedEmail, editedPhone, editedBirthdate, editedDepartment, editedSupervisor)
+        const editedEmployeeObject = buildEditedEmployee(editedFirstName, editedLastName, editedGender, editedEmail, editedPhone, editedBirthdate, editedDepartment, editedSupervisor)
 
-            console.log(editedEmployeeObject);
+        // console.log(editedEmployeeObject);
 
-            editEmployee(empId,editedEmployeeObject)
+        editEmployee(empId, editedEmployeeObject)
             .then(printAllEmployees)
-        }
+    }
 })

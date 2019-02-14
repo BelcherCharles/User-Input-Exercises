@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<fieldset>
+<div id="topLine">
+<fieldset id="employeeInput">
   <legend>Add A New Employee</legend>
   <label for=firstName>First Name</label>
   <input id="empFirstName" name="employee_creator" type="text" autofocus />
@@ -24,10 +25,10 @@
         <option value="Other">Other</option>
     </select><br>
   <label for="emailAddress">Email Address</label>
-  <input id="empEmail" name="employee_creator" type="text" autofocus />
+  <input id="empEmail" name="employee_creator" type="email" autofocus />
   <br>
   <label for="phoneNumber">Phone Number</label>
-  <input id="empPhone" name="employee_creator" type="text" autofocus />
+  <input id="empPhone" name="employee_creator" type="tel" autofocus />
   <br>
   <label for="birthday">Birthdate</label>
   <input id="empBirthdate" name="employee_creator" type="date" autofocus />
@@ -48,8 +49,8 @@
 </fieldset>
 <br>
 
-
-<h3>Employee Search Functions</h3>
+<fieldset id=empSearchDiv>
+<legend>Employees Search</legend>
 <label>Search For Employees By Department:</label>
   <select id="departmentSearch" name="empDeptSearch">
     <option value="All">All Depts.</option>
@@ -60,22 +61,25 @@
     <option value="Maintenance">Maintenance</option>
   </select>
 <br>
+<br>
 <label>Search For Department Supervisors?</label><input id="isSuper" name="super_Search" type="checkbox" autofocus />
+<br>
 <br>
 <label for="firstNameSearch">Search Employees By First Name:</label>
 <input id="firstNameSearch" name="firstNameSearch" type="text" autofocus />
 <br>
+<br>
 <label for="lastNameSearch">Search Employees By Last Name:</label>
 <input id="lastNameSearch" name="lastNameSearch" type="text" autofocus />
-<br>
-<br>
-<br>
-<br>
-<br>
-<h3>Employee Listing</h3>
-<div id="employee-Container">
-
+</fieldset>
 </div>
+<br>
+<br>
+<fieldset id="employeeDisplay">
+  <legend>Employee Listing</legend>
+<div id="employee-Container">
+</div>
+</fieldset>
 
 
 <body>
